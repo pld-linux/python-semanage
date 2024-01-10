@@ -2,7 +2,7 @@ Summary:	Python 2 binding for semanage library
 Summary(pl.UTF-8):	Wiązania Pythona 2 do biblioteki semanage
 Name:		python-semanage
 Version:	2.9
-Release:	4
+Release:	5
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/SELinuxProject/selinux/wiki/Releases
