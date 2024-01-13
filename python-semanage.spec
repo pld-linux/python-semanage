@@ -2,17 +2,19 @@ Summary:	Python 2 binding for semanage library
 Summary(pl.UTF-8):	Wiązania Pythona 2 do biblioteki semanage
 Name:		python-semanage
 Version:	2.9
-Release:	5
+Release:	6
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/SELinuxProject/selinux/wiki/Releases
 Source0:	https://github.com/SELinuxProject/selinux/releases/download/20190315/libsemanage-%{version}.tar.gz
 # Source0-md5:	25f086ff66175a0ca0e7b34dbe8586b7
+Patch0:		%{name}-system-libsemanage.patch
 URL:		https://github.com/SELinuxProject/selinux/wiki
 BuildRequires:	bison
 BuildRequires:	bzip2-devel
 BuildRequires:	flex
 BuildRequires:	libselinux-devel >= 2.9
+BuildRequires:	libsemanage-devel >= %{version}
 BuildRequires:	libsepol-devel >= 2.9
 BuildRequires:	python-devel >= 2
 BuildRequires:	rpm-pythonprov
@@ -29,6 +31,7 @@ Wiązania Pythona 2 do biblioteki semanage.
 
 %prep
 %setup -q -n libsemanage-%{version}
+%patch0 -p1
 
 %build
 %{__make} -j1 pywrap \

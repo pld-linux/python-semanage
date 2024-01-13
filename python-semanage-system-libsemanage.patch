@@ -1,0 +1,20 @@
+--- libsemanage-2.9/src/Makefile.orig	2019-03-15 11:32:30.000000000 +0100
++++ libsemanage-2.9/src/Makefile	2024-01-13 09:34:33.590813875 +0100
+@@ -58,7 +58,7 @@ CFLAGS ?= -Werror -Wall -W -Wundef -Wsha
+ SWIG_CFLAGS += -Wno-error -Wno-unused-but-set-variable -Wno-unused-variable -Wno-shadow \
+ 		-Wno-unused-parameter
+ 
+-override CFLAGS += -I../include -D_GNU_SOURCE
++override CFLAGS += -D_GNU_SOURCE
+ RANLIB ?= ranlib
+ 
+ SWIG = swig -Wall -python -o $(SWIGCOUT) -outdir ./
+@@ -67,7 +67,7 @@ SWIGRUBY = swig -Wall -ruby -o $(SWIGRUB
+ 
+ all: $(LIBA) $(LIBSO) $(LIBPC)
+ 
+-pywrap: all $(SWIGSO)
++pywrap: $(SWIGSO)
+ 
+ rubywrap: all $(SWIGRUBYSO)
+ 
