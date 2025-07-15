@@ -31,7 +31,7 @@ Wiązania Pythona 2 do biblioteki semanage.
 
 %prep
 %setup -q -n libsemanage-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__make} -j1 pywrap \
